@@ -12,6 +12,19 @@ export default {
   },
   routes: [
     {
+      name: 'order',
+      displayName: '메뉴추가',
+      meta: {
+        icon: 'credit_card',
+      },
+      children: [
+        {
+          name: 'order-system',
+          displayName: 'menu.payment-methods',
+        },
+      ],
+    },
+    {
       name: 'dashboard',
       displayName: 'menu.dashboard',
       meta: {
@@ -31,27 +44,6 @@ export default {
       meta: {
         icon: 'folder_shared',
       },
-    },
-    {
-      name: 'payments',
-      displayName: 'menu.payments',
-      meta: {
-        icon: 'credit_card',
-      },
-      children: [
-        {
-          name: 'payment-methods',
-          displayName: 'menu.payment-methods',
-        },
-        {
-          name: 'pricing-plans',
-          displayName: 'menu.pricing-plans',
-        },
-        {
-          name: 'billing',
-          displayName: 'menu.billing',
-        },
-      ],
     },
     {
       name: 'auth',
@@ -74,7 +66,27 @@ export default {
         },
       ],
     },
-
+    {
+      name: 'order',
+      displayName: 'menu.order',
+      meta: {
+        icon: 'shopping_cart',
+      },
+      children: [
+        {
+          name: 'order-history',
+          displayName: 'menu.order-history',
+        },
+        {
+          name: 'order-tracking',
+          displayName: 'menu.order-tracking',
+        },
+        {
+          name: 'order-details',
+          displayName: 'menu.order-details',
+        },
+      ],
+    },
     {
       name: 'faq',
       displayName: 'menu.faq',

@@ -2,7 +2,6 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import AuthLayout from '../layouts/AuthLayout.vue'
 import AppLayout from '../layouts/AppLayout.vue'
-
 import RouteViewComponent from '../layouts/RouterBypass.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -40,6 +39,17 @@ const routes: Array<RouteRecordRaw> = [
         name: 'projects',
         path: 'projects',
         component: () => import('../pages/projects/ProjectsPage.vue'),
+      },
+      {
+        name: 'order',
+        path: '/order',
+        children: [
+          {
+            name: 'order-system',
+            path: 'order-system',
+            component: () => import('../pages/order/order-system/Dashboard2.vue'),
+          },
+        ],
       },
       {
         name: 'payments',
@@ -113,7 +123,6 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition
     }
-    // For some reason using documentation example doesn't scroll on page navigation.
     if (to.hash) {
       return { el: to.hash, behavior: 'smooth' }
     } else {
